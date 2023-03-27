@@ -148,6 +148,7 @@
 > ##### 注：需要minicloud-seata分布式服务启动后再启动
 > ##### 4.mini-cloud-upms-center 用户权限服务
 > ##### 注：需要minicloud-seata分布式服务启动后再启动
+> #### 注意:整体要先执行install
 -------------
 ## mini-cloud-tenant saas多租户项目启动介绍以及目录介绍
 ### 目录结构
@@ -174,3 +175,7 @@
 ### 基于vue3+element plus
 > ***nodejs版本需要v14版本以上，我这里用的是v16.14.0  npm源可以配置为taobao
 > 命令:npm config set registry https://registry.npm.taobao.org***
+
+#### 安装依赖 npm install
+#### 启动 npm serve
+#### 打包 npm build
