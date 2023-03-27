@@ -106,7 +106,8 @@
 ## minicloud 共通项目启动以及目录介绍
 #### 目录结构如下：
 
-> ├─mini-cloud-authentication-center 认证中心服务
+```xml
+├─mini-cloud-authentication-center 认证中心服务
 ├─mini-cloud-common 共通模块
 │  ├─mini-cloud-common-auth 认证共通
 │  ├─mini-cloud-common-balancer 负载均衡共通
@@ -138,6 +139,8 @@
 ├─redis redis 缓存
 ├─sentinel sentinel.jar
 └─sql sql 文件
+```
+
 ---------------
 ### minicloud项目启动
 #### 项目需要启动的服务如下：
