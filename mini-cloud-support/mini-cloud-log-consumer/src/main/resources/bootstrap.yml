@@ -1,0 +1,22 @@
+spring:
+  servlet:
+    multipart:
+      max-request-size: 50MB
+      max-file-size: 50MB
+  application:
+    name: @artifactId@
+  cloud:
+    nacos:
+      discovery:
+        namespace: de7eb781-5e83-4bff-8c52-6f00f6a090d3
+        server-addr: ${NACOS_HOST:127.0.0.1}:${NACOS_PORT:8848}
+        metadata:
+          version: xiaoli
+      config:
+        namespace: de7eb781-5e83-4bff-8c52-6f00f6a090d3
+        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+        file-extension: yml
+        shared-configs:
+          - application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+  profiles:
+    active: @profiles.active@

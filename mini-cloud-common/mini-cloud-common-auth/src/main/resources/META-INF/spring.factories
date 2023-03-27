@@ -1,0 +1,9 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.minicloud.common.auth.config.MiniCloudFeignSecurityAspect,\
+  com.minicloud.common.auth.config.MiniCloudUserAuthenticationConverter,\
+  com.minicloud.common.auth.config.MiniCloudTokenEnhancer,\
+  com.minicloud.common.auth.config.MiniCloudAccessDecisionManager,\
+  com.minicloud.common.auth.config.MiniCloudWebConfig,\
+  com.minicloud.common.auth.config.MiniCloudGlobalExceptionHandler
+
+

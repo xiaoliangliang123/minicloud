@@ -1,0 +1,40 @@
+server:
+  port: 6500
+  undertow:
+    threads:
+      io: 8
+      worker: 64
+    buffer-size: 1024
+    direct-buffers: true
+
+spring:
+  application:
+    name: @artifactId@
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${NACOS_HOST:mini-cloud-nacos}:${NACOS_PORT:8848}
+        metadata:
+          preserved.heart.beat.interval: 1000
+          preserved.heart.beat.timeout: 3000
+          preserved.ip.delete.timeout: 3000
+          version: default
+      config:
+        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+        file-extension: yml
+        shared-configs:
+          - application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+  profiles:
+    active: @profiles.active@
+
+
+rocketmq:
+  # rocketMQ的命名服务器，格式为: host:port;host:port
+  name-server: localhost:9876
+  producer:
+    # 生产者的组名
+    group: group-test
+    # 发送消息超时时间 默认3秒
+    send-message-timeout: 3000
+
+

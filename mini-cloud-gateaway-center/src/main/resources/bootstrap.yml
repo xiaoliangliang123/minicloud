@@ -1,0 +1,76 @@
+server:
+  port: 7700
+
+spring:
+  application:
+    name: @artifactId@
+  profiles:
+    active: @profiles.active@
+  cloud:
+    nacos:
+      discovery:
+
+        server-addr: ${NACOS_HOST:127.0.0.1}:${NACOS_PORT:8848}
+      config:
+        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+        file-extension: yml
+        shared-configs:
+          - application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+    gateway:
+      routes:
+        - id: mini-cloud-upms-center-biz
+          uri: lb://mini-cloud-upms-center-biz
+          predicates:
+            - Path=/upms/**
+          filters:
+            - StripPrefix=1
+
+        - id: mini-cloud-authentication-center
+          uri: lb://mini-cloud-authentication-center
+          predicates:
+            - Path=/auth/**
+          filters:
+            - StripPrefix=1
+
+        - id: mini-cloud-simulate-order-biz
+          uri: lb://mini-cloud-simulate-order-biz
+          predicates:
+            - Path=/order/**
+          filters:
+            - StripPrefix=1
+
+        - id: mini-cloud-simulate-goods-biz
+          uri: lb://mini-cloud-simulate-goods-biz
+
+          predicates:
+            - Path=/goods/**
+          filters:
+            - StripPrefix=1
+
+        - id: mini-cloud-busi-tenant-1-login
+          uri: lb://mini-cloud-busi-tenant-1-login
+          predicates:
+            - Path=/tenant-1-login/**
+          filters:
+            - StripPrefix=1
+
+        - id: mini-cloud-busi-tenant-2-login
+          uri: lb://mini-cloud-busi-tenant-2-login
+          predicates:
+            - Path=/tenant-2-login/**
+          filters:
+            - StripPrefix=1
+
+        - id: mini-cloud-files
+          uri: lb://mini-cloud-files-biz
+          predicates:
+            - Path=/files/**
+          filters:
+            - StripPrefix=1
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      enabled: true
+
+

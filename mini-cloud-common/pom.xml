@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>mini-cloud</artifactId>
+        <groupId>org.mini-cloud</groupId>
+        <version>1.0.0.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>mini-cloud-common</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>mini-cloud-common-auth</module>
+        <module>mini-cloud-common-fegin</module>
+        <module>mini-cloud-common-cache</module>
+        <module>mini-cloud-common-data</module>
+        <module>mini-cloud-common-core</module>
+        <module>mini-cloud-common-balancer</module>
+        <module>mini-cloud-common-log</module>
+        <module>mini-cloud-common-rocketmq</module>
+        <module>mini-cloud-common-dependencies</module>
+        <module>mini-cloud-common-swagger</module>
+        <module>mini-cloud-common-log4j2</module>
+        <module>mini-cloud-common-constant</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
+</project>

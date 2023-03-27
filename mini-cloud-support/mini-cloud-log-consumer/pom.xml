@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>mini-cloud-support</artifactId>
+        <groupId>org.mini-cloud</groupId>
+        <version>1.0.0.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>mini-cloud-log-consumer</artifactId>
+
+    <dependencies>
+
+        <!--注册中心客户端-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+        <!--配置中心客户端-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+        </dependency>
+        <!--日志拦截依赖-->
+        <dependency>
+            <groupId>org.mini-cloud</groupId>
+            <artifactId>mini-cloud-common-log</artifactId>
+            <version>1.0.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mini-cloud</groupId>
+            <artifactId>mini-cloud-common-fegin</artifactId>
+            <version>1.0.0.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <!--common data 依赖 -->
+        <dependency>
+            <groupId>org.mini-cloud</groupId>
+            <artifactId>mini-cloud-common-data</artifactId>
+            <version>1.0.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mini-cloud</groupId>
+            <artifactId>mini-cloud-common-auth</artifactId>
+            <version>1.0.0.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
+</project>

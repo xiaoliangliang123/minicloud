@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.minicloud.common.log.config.IOLogConfigration,\
+com.minicloud.common.log.config.SpringContextUtils
