@@ -1,4 +1,4 @@
-# minicloud 开源微服务saas框架（最简单轻量易用的微服务saas框架）
+# minicloud 开源微服务saas框架（很适合学习和商业应用的轻量级微服务saas框架）
 
 > ***mini-cloud 是我业余时间整合的过去几年架构中使用过的一些组件，以及市面一些开源项目集中在一起重构开发的大型微服务开源框架 后台基于spring cloud alibaba ，spring cloud 等全家桶 前端基于vue3+emelent plus
 > 包含认证中心，注册中心，用户权限中心，seata 分布式事务，独立开发的全场景适配独立的可视化工作流引擎，报表引擎，fabric区块链使用，
