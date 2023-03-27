@@ -8,7 +8,7 @@
 > #### 欢迎加入文章最下面的微信进入学习群 
 > ##### 也可以加我微信号：unix-blacker
 
-### 欢迎订阅[《带大家从0~1搭建大型微服务saas框架》](https://blog.csdn.net/madness1010/category_11701564.html)专栏，里面有所有开发思路和源码解读
+### 欢迎订阅[《带大家从0~1搭建大型微服务saas框架》](https://blog.csdn.net/madness1010/category_11701564.html)专栏，里面有所有服务,组件及代码的开发思路和解读
 
 
 ## 我们目前开源版本是1.0.0.0-beta版
