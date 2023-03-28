@@ -6,6 +6,8 @@
 
 
 > #### 欢迎加入文章最下面的微信进入学习群 
+![在这里插入图片描述](https://img-blog.csdnimg.cn/f26d9801019746b9a0b7620e5405dda6.png)
+
 > ##### 也可以加我微信号：unix-blacker
 
 ### 欢迎订阅[《带大家从0~1搭建大型微服务saas框架》](https://blog.csdn.net/madness1010/category_11701564.html)专栏，里面有所有服务,组件及代码的开发思路和解读
