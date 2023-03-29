@@ -48,6 +48,7 @@
 | 租户管理 |  |
 | 内嵌swagger  |  |
 | 权限管理等 |等等 |
+| 数据库分库分表 |基于shardingsphere |
 | simulate 模拟一些功能场景的demo |目前有商品服务，订单服务  |
 
 
