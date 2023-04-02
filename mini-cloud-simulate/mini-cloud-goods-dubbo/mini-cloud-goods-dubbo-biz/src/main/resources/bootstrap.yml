@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: @artifactId@
+dubbo:
+  application:
+    id:  @artifactId@
+    name:  @artifactId@
+  scan:
+    base-packages: com.minicloud.goods.dubbo
+  registry:
+
+    address: nacos://127.0.0.1:8848
+  protocol:
+    name: dubbo
+    port: -1
+  reference:
+    defa
+#  cloud:
+#    subscribed-services: nacos-provider
+
+
