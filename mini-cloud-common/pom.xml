@@ -24,6 +24,7 @@
         <module>mini-cloud-common-swagger</module>
         <module>mini-cloud-common-log4j2</module>
         <module>mini-cloud-common-constant</module>
+        <module>mini-cloud-common-data-mybatisplus</module>
     </modules>
 
     <properties>

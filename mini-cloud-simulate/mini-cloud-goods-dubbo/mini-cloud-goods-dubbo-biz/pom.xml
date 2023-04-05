@@ -15,7 +15,6 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <dubbo.version>2.7.13</dubbo.version>
-
     </properties>
 
     <dependencies>
@@ -24,11 +23,15 @@
             <artifactId>mini-cloud-goods-dubbo-api</artifactId>
             <version>1.0.0.0-SNAPSHOT</version>
         </dependency>
+
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-dubbo</artifactId>
         </dependency>
-
+        <dependency>
+            <groupId>org.mini-cloud</groupId>
+            <artifactId>mini-cloud-common-data-mybatisplus</artifactId>
+        </dependency>
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
@@ -37,6 +40,10 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>3.8.1</version>
+        </dependency>
+        <dependency>
+            <groupId>io.seata</groupId>
+            <artifactId>seata-spring-boot-starter</artifactId>
         </dependency>
 
     </dependencies>

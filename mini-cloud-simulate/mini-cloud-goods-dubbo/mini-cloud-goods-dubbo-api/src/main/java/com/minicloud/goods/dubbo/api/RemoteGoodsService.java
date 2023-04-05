@@ -1,5 +1,7 @@
 package com.minicloud.goods.dubbo.api;
 
+import com.minicloud.goods.dubbo.dto.GoodsDTO;
+
 /**
  * @Author：alan.wang
  * @Package：com.minicloud.goods.dubbo
@@ -10,4 +12,6 @@ package com.minicloud.goods.dubbo.api;
 public interface RemoteGoodsService {
 
     boolean subStock(Integer goodsId,Integer stock);
+
+    boolean subStock(GoodsDTO goodsDTO);
 }

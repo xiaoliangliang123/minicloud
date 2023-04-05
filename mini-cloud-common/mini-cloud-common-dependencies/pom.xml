@@ -11,7 +11,7 @@
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
-        <minicloud-common-version>1.0-SNAPSHOT</minicloud-common-version>
+        <minicloud-common-version>${project.version}</minicloud-common-version>
     </properties>
 
     <dependencyManagement>
@@ -73,6 +73,11 @@
             <dependency>
                 <groupId>org.mini-cloud</groupId>
                 <artifactId>mini-cloud-common-constant</artifactId>
+                <version>${minicloud-common-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mini-cloud</groupId>
+                <artifactId>mini-cloud-common-data-mybatisplus</artifactId>
                 <version>${minicloud-common-version}</version>
             </dependency>
         </dependencies>

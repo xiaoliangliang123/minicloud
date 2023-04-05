@@ -3,6 +3,43 @@ server:
   servlet:
     context-path: /
 spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      username: ${MYSQL_USER:root}
+      password: ${MYSQL_PWD:root}
+      url: jdbc:mysql://${MYSQL_HOST:mini-cloud-master}:${MYSQL_PORT:3306}/${MYSQL_DB:mini_cloud_dubbo_order}?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2B8&allowMultiQueries=true&allowPublicKeyRetrieval=true
+  #
+#  shardingsphere:
+#    props:
+#      sql:
+#        show: true
+#    datasource:
+#      names: master,slave0,slave1
+#      master:
+#        type: com.alibaba.druid.pool.DruidDataSource
+#        driver-class-name: com.mysql.cj.jdbc.Driver
+#        url: jdbc:mysql://${MYSQL_HOST:mini-cloud-master}:${MYSQL_PORT:3306}/${MYSQL_DB:mini_cloud_dubbo_order}?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2B8&allowMultiQueries=true&allowPublicKeyRetrieval=true
+#        username: root
+#        password: root
+#      slave0:
+#        type: com.alibaba.druid.pool.DruidDataSource
+#        driver-class-name: com.mysql.cj.jdbc.Driver
+#        url: jdbc:mysql://${MYSQL_HOST:mini-cloud-slave1}:${MYSQL_PORT:3306}/${MYSQL_DB:mini_cloud_dubbo_order}?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2B8&allowMultiQueries=true&allowPublicKeyRetrieval=true
+#        username: root
+#        password: root
+#      slave1:
+#        type: com.alibaba.druid.pool.DruidDataSource
+#        driver-class-name: com.mysql.cj.jdbc.Driver
+#        url: jdbc:mysql://${MYSQL_HOST:mini-cloud-slave2}:${MYSQL_PORT:3306}/${MYSQL_DB:mini_cloud_dubbo_order}?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2B8&allowMultiQueries=true&allowPublicKeyRetrieval=true
+#        username: root
+#        password: root
+#    sharding:
+#      master-slave-rules:
+#        master:
+#          master-data-source-name: master
+#          slave-data-source-names: slave0,slave1
   application:
     name: @artifactId@
 dubbo:
@@ -19,4 +56,49 @@ dubbo:
   cloud:
     subscribed-services: mini-cloud-goods-doubbo-biz
 
-
+seata:
+  enabled: true
+  application-id: mini-cloud-order-doubbo-biz
+  tx-service-group: mini-cloud-order-dubbo-biz-seata-service-group # 事务群组（可以每个应用独立取名，也可以使用相同的名字）
+#  client:
+#    rm-report-success-enable: true
+#    rm-table-meta-check-enable: false # 自动刷新缓存中的表结构（默认false）
+#    rm-report-retry-count: 5 # 一阶段结果上报TC重试次数（默认5）
+#    rm-async-commit-buffer-limit: 10000 # 异步提交缓存队列长度（默认10000）
+#    rm:
+#      lock:
+#        lock-retry-internal: 10 # 校验或占用全局锁重试间隔（默认10ms）
+#        lock-retry-times:    30 # 校验或占用全局锁重试次数（默认30）
+#        lock-retry-policy-branch-rollback-on-conflict: true # 分支事务与其它全局回滚事务冲突时锁策略（优先释放本地锁让回滚成功）
+#    tm-commit-retry-count:   3 # 一阶段全局提交结果上报TC重试次数（默认1次，建议大于1）
+#    tm-rollback-retry-count: 3 # 一阶段全局回滚结果上报TC重试次数（默认1次，建议大于1）
+#    undo:
+#      undo-data-validation: true # 二阶段回滚镜像校验（默认true开启）
+#      undo-log-serialization: jackson # undo序列化方式（默认jackson）
+#      undo-log-table: undo_log  # 自定义undo表名（默认undo_log）
+#    log:
+#      exceptionRate: 100 # 日志异常输出概率（默认100）
+#    support:
+#      spring:
+#        datasource-autoproxy: true
+  service:
+    enable-degrade: false
+    disable-global-transaction: false
+    vgroup-mapping:
+      mini-cloud-order-dubbo-biz-seata-service-group: default
+#    grouplist: 127.0.0.1:8091
+  registry:
+    file:
+      name: file.conf
+    type: nacos
+    nacos:
+      server-addr: localhost:8848
+      namespace:
+      cluster: default
+  config:
+    file:
+      name: file.conf
+    type: nacos
+    nacos:
+      namespace:
+      server-addr: localhost:8848

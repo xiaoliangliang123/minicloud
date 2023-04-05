@@ -119,6 +119,7 @@
         <hutool.version>5.3.1</hutool.version>
         <minio.version>8.3.4</minio.version>
         <okhttp.version>4.8.1</okhttp.version>
+        <mybatis.version>3.3.1</mybatis.version>
     </properties>
     <dependencies>
         <dependency>
@@ -144,6 +145,16 @@
                 <groupId>io.swagger</groupId>
                 <artifactId>swagger-models</artifactId>
                 <version>${swagger.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-extension</artifactId>
+                <version>${mybatis.version}</version>
             </dependency>
 
             <dependency>

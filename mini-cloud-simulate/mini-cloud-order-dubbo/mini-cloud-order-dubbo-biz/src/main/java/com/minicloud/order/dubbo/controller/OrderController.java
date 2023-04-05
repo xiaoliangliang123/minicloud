@@ -1,6 +1,7 @@
 package com.minicloud.order.dubbo.controller;
 
 import com.minicloud.common.core.util.ResponseX;
+import com.minicloud.goods.dubbo.dto.GoodsDTO;
 import com.minicloud.order.dubbo.service.OrderService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,6 +26,12 @@ public class OrderController {
 
     @PostMapping("/create")
     public ResponseX create(Integer goodsId,Integer stock){
+        return ResponseX.ok(orderService.create(goodsId,stock));
+    }
+
+    @PostMapping("/create/dto")
+    public ResponseX createDto(Integer goodsId,Integer stock){
+
         return ResponseX.ok(orderService.create(goodsId,stock));
     }
 
